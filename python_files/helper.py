@@ -28,7 +28,7 @@ def most_busy_users(df):
 
 
 def create_wordcloud(selected_user, df):
-    f = open('../Stop Words/stop_hinglish.txt', 'r')
+    f = open('../Stop Words/stop_english.txt', 'r')
     stop_words = f.read()
 
     if selected_user != 'Overall':
@@ -56,7 +56,7 @@ def most_common_words(selected_user, df):
         df = df[df['user'] == selected_user]
     temp = df[df['user'] != 'group_notification']
     temp = temp[temp['message'] != '<Media omitted>\n']
-    f = open('../Stop Words/stop_hinglish.txt', 'r')
+    f = open('../Stop Words/stop_english.txt', 'r')
     stop_words = f.read()
     words = []
     for message in temp.message:
